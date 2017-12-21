@@ -6,9 +6,9 @@
   "scripts": {
     "start": "run-s build serve",
     "build": "run-s clean && run-p build:*",
-    "build:html": "cpr index.html dist/",
-    "build:lambda": "cpr my-function.js lambda/",
-    "clean": "rimraf dist lambda && mkdirp dist lambda",
+    "build:html": "mkdirp dist && cpr index.html dist/",
+    "build:lambda": "mkdirp lambda && cpr my-function.js lambda/",
+    "clean": "rimraf dist lambda",
     "serve": "http-server dist"
   },
   "author": "",

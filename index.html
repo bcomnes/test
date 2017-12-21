@@ -11,8 +11,12 @@
     const button = document.querySelector("#button")
     button.addEventListener("click", (ev) => {
       fetch('/.netlify/functions/my-function')
-        .then(response => {
-          messageBox.innerText = JSON.stringify(response, null, " ")
+        .then(response => response.json())
+        .then(json => {
+          messageBox.innerText = json
+        })
+        .catch(err => {
+          messageBox.innerText = err.message
         })
     })
   </script>
