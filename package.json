@@ -4,20 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "run-s build serve",
-    "build": "run-s clean && run-p build:*",
-    "build:html": "mkdirp dist && cpr index.html dist/",
-    "build:lambda": "mkdirp lambda && cpr *.js lambda/",
-    "clean": "rimraf dist lambda",
-    "serve": "http-server dist -c-1 --cors"
+    "start": "budo index.js:bundle.js --dir dist --live --open --cors",
+    "build": "echo 'no build process'"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cpr": "^3.0.1",
-    "http-server": "^0.10.0",
-    "mkdirp": "^0.5.1",
-    "npm-run-all": "^4.1.2",
-    "rimraf": "^2.6.2"
+    "budo": "^10.0.4",
+    "npm-run-all": "^4.1.2"
   }
 }
