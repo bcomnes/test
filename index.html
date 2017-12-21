@@ -15,7 +15,7 @@
           return response.json()
         })
         .then(json => {
-          messageBox.innerText = json
+          messageBox.innerText = JSON.stringify(json, null, " ")
         })
         .catch(err => {
           messageBox.innerText = err.message
