@@ -12,7 +12,7 @@
     button.addEventListener("click", (ev) => {
       fetch('/.netlify/functions/my-function.js')
         .then(response => {
-          messageBox.innerText = response
+          messageBox.innerText = JSON.stringify(response, null, " ")
         })
     })
   </script>
