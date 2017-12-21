@@ -10,7 +10,7 @@
     const messageBox = document.querySelector("#message-box")
     const button = document.querySelector("#button")
     button.addEventListener("click", (ev) => {
-      fetch('/.netlify/functions/my-function.js')
+      fetch('/.netlify/functions/my-function')
         .then(response => {
           messageBox.innerText = JSON.stringify(response, null, " ")
         })
