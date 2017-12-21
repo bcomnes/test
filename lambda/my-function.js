@@ -1,4 +1,4 @@
-exports.handler = myHandlerFunction
+exports.handler = handler
 
 function handler (event, context, cb) {
   var message = "hello world from AWS " + Date.now()
