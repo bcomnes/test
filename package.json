@@ -9,7 +9,7 @@
     "build:html": "mkdirp dist && cpr index.html dist/",
     "build:lambda": "mkdirp lambda && cpr my-function.js lambda/",
     "clean": "rimraf dist lambda",
-    "serve": "http-server dist"
+    "serve": "http-server dist -c-1 --cors"
   },
   "author": "",
   "license": "ISC",
