@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Function test</title>
+</head>
+<body>
+  <button id="button">ClickMe</button>
+  <pre id="message-box"></pre>
+  <script type="text/javascript">
+    const messageBox = document.querySelector("#message-box")
+    const button = document.querySelector("#button")
+    button.addEventListener("click", (ev) => {
+      fetch('/.netlify/functions/my-function.js')
+        .then(response => {
+          messageBox.innerText = response
+        })
+    })
+  </script>
+</body>
+</html>

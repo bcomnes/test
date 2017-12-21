@@ -4,8 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "run-s build serve",
+    "build": "run-s clean && run-p build:*",
+    "build:html": "cpr index.html dist/",
+    "build:lambda": "cpr my-function.js lambda/",
+    "clean": "rimraf dist lambda && mkdirp dist lambda",
+    "serve": "http-server dist"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "cpr": "^3.0.1",
+    "http-server": "^0.10.0",
+    "mkdirp": "^0.5.1",
+    "npm-run-all": "^4.1.2",
+    "rimraf": "^2.6.2"
+  }
 }
